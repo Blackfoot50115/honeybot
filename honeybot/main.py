@@ -210,7 +210,10 @@ class Bot_core(object):
     BOT IRC FUNCTIONS
     '''
     def connect(self):
-            self.irc.connect((self.server_url, self.port))
+        #check auth methods available --> auth_list
+        #authenticate(auth_method) for auth_method in auth_list
+
+        self.irc.connect((self.server_url, self.port))
 
     def identify(self):
         self.send(self.identify_command())
