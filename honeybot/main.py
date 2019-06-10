@@ -7,6 +7,7 @@ import logging
 import socket
 import sys
 import time
+from ldap import sasl
 
 connect_config = configparser.ConfigParser()
 connect_config.read('settings/CONNECT.conf')
