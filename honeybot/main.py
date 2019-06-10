@@ -210,9 +210,6 @@ class Bot_core(object):
     BOT IRC FUNCTIONS
     '''
     def connect(self):
-        #check auth methods available --> auth_list
-        #authenticate(auth_method) for auth_method in auth_list
-
         self.irc.connect((self.server_url, self.port))
 
     def identify(self):
@@ -271,6 +268,16 @@ class Bot_core(object):
             logger.warning(parts[1])
             self.send(self.pong_return(self.domain))
             self.send(self.pong_return(parts[1]))
+
+
+class SaslBot(Bot_core):
+    '''
+        SaslBot is a subclass of class Bot_core that gives
+        instances the added functionality of communicating
+        with a server that requires the SASL framework for 
+        authentication and communication.
+    '''
+        pass
 
 
 if __name__ == '__main__':
